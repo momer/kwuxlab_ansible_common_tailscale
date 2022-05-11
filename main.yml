@@ -34,7 +34,7 @@
   roles:
     - role: artis3n.tailscale
       vars:
-        tailscale_auth_key: "{{ tailscale_auth_key }}"
+        tailscale_auth_key: "{{ target_tailscale_auth_key }}"
       tags:
         - tailscale
 
