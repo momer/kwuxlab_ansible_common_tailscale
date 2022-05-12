@@ -5,6 +5,7 @@
   handlers:
     - include: handlers/task_completion.yml
   vars_files:
+    - vars/shared.yml
     - version.yml
   tags:
     - kwuxlab_ansible_common_tailscale
