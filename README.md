@@ -4,23 +4,8 @@ This playbook installs and configures tailscale for the target node(s).
 
 ## Requirements
 
-Configure your tailscale authorization key as shown in `vars/example_environment.yml`.
+### Variables
 
-The playbook will look for a credential file in `vars/` that matches the ansible
-environment, *e.g.*:
-
-- `production_environment.yml`
-- `test_environment.yml`
-- etc.
-
-One way to secure these files is to encrypt them files with `ansible-vault`:
-
-```sh
-KWUXLAB_ENV="production"; ansible-vault encrypt \
-  --vault-id password_file."${KWUXLAB_ENV}".txt \
-  playbooks/kwuxlab_ansible_common_tailscale/vars/"${KWUXLAB_ENV}"_environment.yml
-```
-
-Which requires that `password_file."${KWUXLAB_ENV}".txt` 
-(read: `password_file.production.txt` in the above example) exists in your
-current directory.
+1. `target_tailscale_auth_key`: Tailscale authorization key. Generated at the [tailscale](https://tailscale.com/) website. 
+   * Additional details about this variable are at the
+    [tailscale documentation site](https://tailscale.com/kb/1085/auth-keys/#authentication)
